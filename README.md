@@ -9,6 +9,20 @@ Sitio marketing estático para [modozen.cr](https://modozen.cr). El contenido vi
 - Content Collections (Markdown + YAML)
 - Deploy: [Vercel](https://vercel.com)
 
+## Guía de estilos
+
+Sistema visual en [`src/styles/global.css`](src/styles/global.css) según `modozen_professional_style_guide.docx`:
+
+| Token | Uso |
+|-------|-----|
+| Cream `#F6F1E8` | Fondo principal |
+| Sage Dark `#4B533B` | Navegación (top bar) y footer |
+| Peach `#DDA89A` | CTA primario (texto blanco) |
+| Sage `#6B7551` | CTA secundario |
+| Bebas Neue / Oswald / Inter | Headings / labels / body |
+| Grid productos | 1 col móvil · 2 tablet · 5 desktop |
+| Hero | 64px móvil · 96px desktop · textura papel |
+
 ## Desarrollo local
 
 ```bash

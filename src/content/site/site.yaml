@@ -1,7 +1,8 @@
 brand:
   name: MODO ZEN
   tagline: "Respire. Ya casi llega."
-  description: "Kits de supervivencia para la vida moderna. Hechos en Costa Rica con amor, calma y un perezoso de guía."
+  heroCopy: "Tu kit emocional de emergencia. Calma urbana, humor tico y bienestar real — hecho en Costa Rica."
+  description: "Kits de supervivencia para la vida moderna. Hechos en Costa Rica — calma urbana, humor tico y bienestar real."
 
 whatsapp:
   phone: "50688888888"
@@ -33,15 +34,15 @@ topBar:
     icon: leaf
 
 benefits:
-  - label: ALIVIA EL ESTRÉS
+  - label: Alivia el estrés
     icon: leaf
-  - label: ENFOQUE MENTAL
+  - label: Enfoque mental
     icon: brain
-  - label: RESET RÁPIDO
+  - label: Reset rápido
     icon: refresh
-  - label: HECHO PARA COSTA RICA
+  - label: Hecho para Costa Rica
     icon: flag
-  - label: 100% MODO ZEN
+  - label: 100% Modo Zen
     icon: heart
 
 kitsSection:
@@ -49,18 +50,18 @@ kitsSection:
   subtitle: "Cada día tiene su propia batalla. Nosotros tenemos tu kit."
 
 story:
-  quote: "LA PRESA NO DEFINE SU VALOR COMO PERSONA."
-  subquote: "Respire. Enfoque. Continúe. ♡"
-  ctaLabel: CONOCE NUESTRA HISTORIA
+  quote: "La presa no define su valor como persona."
+  subquote: "Respire. Enfoque. Continúe."
+  ctaLabel: Conoce nuestra historia
 
 trustBar:
-  - label: HECHO EN COSTA RICA
+  - label: Hecho en Costa Rica
     icon: flag
-  - label: ENVÍOS A TODO EL PAÍS
+  - label: Envíos
     icon: truck
-  - label: PAGOS SEGUROS
+  - label: Pagos seguros
     icon: lock
-  - label: "+1000 PERSONAS EN MODO ZEN"
+  - label: Comunidad
     icon: users
 
 about:
@@ -69,7 +70,7 @@ about:
   paragraphs:
     - "MODO ZEN nació de una idea simple: la vida moderna en Costa Rica merece pausas reales. No prometemos magia — prometemos herramientas conscientes para sobrevivir el día a día con más calma."
     - "Cada kit es curado a mano con productos locales y materiales que respetan el planeta. Desde el tráfico de la GAM hasta una tarde de café, hay un ritual para cada batalla."
-    - "Somos un equipo pequeño con un perezoso como guía espiritual. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
+    - "Somos un equipo pequeño con un perezoso como guía. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
 
 footer:
   menu:

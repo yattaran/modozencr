@@ -35,6 +35,7 @@ const site = defineCollection({
 		brand: z.object({
 			name: z.string(),
 			tagline: z.string(),
+			heroCopy: z.string(),
 			description: z.string(),
 		}),
 		whatsapp: z.object({

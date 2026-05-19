@@ -8,11 +8,11 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="bg-sage text-white">
-	<div class="section-container flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-2.5 text-[11px] font-medium sm:text-xs">
+<div class="bg-sage-dark text-cream">
+	<div class="section-container flex h-11 items-center justify-center gap-x-8 gap-y-1 overflow-x-auto">
 		{
 			items.map((item) => (
-				<span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+				<span class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap text-xs font-medium uppercase tracking-wide">
 					<TopBarIcon icon={item.icon} />
 					{item.label}
 				</span>

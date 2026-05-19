@@ -9,12 +9,12 @@ const contactUrl = whatsappUrl(site);
 ---
 
 <BaseLayout title={about.title} site={site}>
-	<section class="bg-cream py-12 lg:py-20">
+	<section class="bg-cream py-16 lg:py-24">
 		<div class="section-container max-w-3xl">
-			<h1 class="font-heading text-4xl font-extrabold text-charcoal">{about.title}</h1>
-			<p class="mt-4 text-xl font-medium text-sage">{about.lead}</p>
+			<h1 class="text-section-title">{about.title}</h1>
+			<p class="text-subtitle mt-5 text-xl text-sage">{about.lead}</p>
 
-			<div class="mt-10 space-y-6 leading-relaxed text-charcoal/85">
+			<div class="mt-12 space-y-6 text-base leading-relaxed text-ink/85">
 				{
 					about.paragraphs.map((paragraph) => (
 						<p>{paragraph}</p>
@@ -27,11 +27,11 @@ const contactUrl = whatsappUrl(site);
 				alt="Perezoso MODO ZEN"
 				width="640"
 				height="296"
-				class="mx-auto mt-12 w-full max-w-md object-contain"
+				class="mx-auto mt-16 w-full max-w-md object-contain"
 				loading="lazy"
 			/>
 
-			<div id="contacto" class="mt-12 text-center">
+			<div id="contacto" class="mt-16 text-center">
 				<a
 					href={contactUrl}
 					target="_blank"

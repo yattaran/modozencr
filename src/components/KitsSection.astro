@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import KitCard from './KitCard.astro';
-import KitList from './KitList.astro';
 
 interface Props {
 	kits: CollectionEntry<'kits'>[];
@@ -12,46 +11,17 @@ const { kits, site } = Astro.props;
 const { kitsSection } = site.data;
 ---
 
-<section id="kits" class="bg-cream py-14 lg:py-20">
+<section id="kits" class="bg-cream py-16 lg:py-24">
 	<div class="section-container">
 		<div class="text-center">
-			<h2 class="font-heading text-xl font-extrabold tracking-tight text-charcoal sm:text-2xl lg:text-3xl">
-				{kitsSection.title}
-			</h2>
-			<p class="mt-2 text-sm font-medium text-terracotta sm:text-base">{kitsSection.subtitle}</p>
+			<h2 class="text-section-title">{kitsSection.title}</h2>
+			<p class="text-body-muted mt-4 max-w-xl mx-auto">{kitsSection.subtitle}</p>
 		</div>
 
-		<KitList kits={kits} site={site} />
-
-		<div class="relative mt-10 hidden lg:block">
-			<div
-				id="kits-carousel"
-				class="hide-scrollbar flex gap-5 overflow-x-auto scroll-smooth pb-2 snap-x snap-mandatory"
-			>
-				{kits.map((kit) => (
-					<KitCard kit={kit} site={site} />
-				))}
-			</div>
-			<button
-				type="button"
-				id="kits-carousel-next"
-				class="absolute -right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-cream-dark bg-white text-sage shadow-md transition-colors hover:bg-cream hover:text-sage-dark"
-				aria-label="Ver más kits"
-			>
-				<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-				</svg>
-			</button>
+		<div class="products-grid">
+			{kits.map((kit) => (
+				<KitCard kit={kit} site={site} />
+			))}
 		</div>
 	</div>
 </section>
-
-<script>
-	const carousel = document.getElementById('kits-carousel');
-	const nextBtn = document.getElementById('kits-carousel-next');
-
-	nextBtn?.addEventListener('click', () => {
-		if (!carousel) return;
-		carousel.scrollBy({ left: 300, behavior: 'smooth' });
-	});
-</script>

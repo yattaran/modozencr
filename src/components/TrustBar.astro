@@ -8,14 +8,14 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="border-y border-cream-dark/80 bg-cream py-10">
+<section class="border-t border-cream-dark bg-cream-dark/40 py-12 lg:py-16">
 	<div class="section-container">
-		<ul class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+		<ul class="benefits-row">
 			{
 				items.map((item) => (
-					<li class="flex flex-col items-center gap-3 text-center">
+					<li class="flex w-[160px] flex-col items-center gap-3 text-center">
 						<BenefitIcon icon={item.icon} />
-						<span class="text-[10px] font-bold leading-tight tracking-wide text-charcoal sm:text-xs">
+						<span class="text-small font-medium text-ink/80">
 							{item.label}
 						</span>
 					</li>

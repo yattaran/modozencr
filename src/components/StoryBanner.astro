@@ -8,28 +8,28 @@ interface Props {
 const { quote, subquote, ctaLabel } = Astro.props;
 ---
 
-<section class="bg-cream-banner py-10 lg:py-14">
+<section class="bg-cream py-16 lg:py-24">
 	<div class="section-container">
-		<div class="flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:gap-8">
-			<div class="w-full shrink-0 lg:w-[280px] xl:w-[320px]">
+		<div class="story-panel grid items-center gap-8 lg:grid-cols-[minmax(0,180px)_1fr_auto] lg:gap-12">
+			<div class="mx-auto w-full max-w-[200px] lg:mx-0">
 				<img
 					src="/images/story-sloth.png"
 					alt=""
-					width={640}
-					height={296}
-					class="mx-auto h-auto w-full max-w-sm object-contain lg:max-w-none"
+					width={440}
+					height={200}
+					class="h-auto w-full object-contain"
 					loading="lazy"
 				/>
 			</div>
 
-			<blockquote class="flex-1 text-center lg:text-left">
-				<p class="font-heading text-lg font-extrabold leading-snug text-charcoal sm:text-xl lg:text-2xl">
+			<blockquote class="text-center lg:text-left">
+				<p class="font-display text-[28px] leading-[1.1] text-ink sm:text-[34px] lg:text-[40px]">
 					{quote}
 				</p>
-				<p class="mt-2 text-base text-charcoal/80 sm:text-lg">{subquote}</p>
+				<p class="text-body-muted mt-4 text-lg">{subquote}</p>
 			</blockquote>
 
-			<a href="/nosotros" class="btn-sage shrink-0 whitespace-nowrap">
+			<a href="/nosotros" class="btn-primary mx-auto shrink-0 lg:mx-0">
 				{ctaLabel}
 			</a>
 		</div>

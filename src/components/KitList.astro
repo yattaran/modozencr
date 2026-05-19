@@ -10,39 +10,36 @@ interface Props {
 const { kits, site } = Astro.props;
 ---
 
-<ul class="mt-8 flex flex-col gap-4 lg:hidden">
+<ul class="mt-8 flex flex-col gap-5 md:hidden">
 	{
 		kits.map((kit) => {
 			const ctaUrl = kitCtaUrl(kit, site);
 			return (
-				<li class="overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(45,45,45,0.05)]">
-					<a
-						href={`/kits/${kit.data.slug}`}
-						class="flex items-center gap-4 border-b border-cream-dark/80 p-4"
-					>
-						<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-cream p-2">
+				<li class="rounded-2xl border border-cream-dark bg-cream p-4">
+					<a href={`/kits/${kit.data.slug}`} class="flex items-center gap-4">
+						<div class="kit-card-image !h-20 !w-20 shrink-0 rounded-xl">
 							<img
 								src={kit.data.image}
 								alt=""
 								width="80"
 								height="80"
-								class="max-h-full max-w-full object-contain"
+								class="!max-h-full !max-w-full"
 								loading="lazy"
 							/>
 						</div>
 						<div class="min-w-0 flex-1">
-							<p class="font-heading text-sm font-extrabold text-charcoal">{kit.data.title}</p>
-							<p class="mt-0.5 line-clamp-2 text-xs text-charcoal/70">{kit.data.shortDescription}</p>
+							<p class="text-card-title text-left text-lg">{kit.data.title}</p>
+							<p class="text-small mt-1 line-clamp-2 text-left text-ink/65">
+								{kit.data.shortDescription}
+							</p>
 						</div>
 						<svg class="h-5 w-5 shrink-0 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
 						</svg>
 					</a>
-					<div class="px-4 pb-4">
-						<a href={ctaUrl} target="_blank" rel="noopener noreferrer" class="btn-kit">
-							VER KIT
-						</a>
-					</div>
+					<a href={ctaUrl} target="_blank" rel="noopener noreferrer" class="btn-kit mt-4">
+						VER KIT
+					</a>
 				</li>
 			);
 		})

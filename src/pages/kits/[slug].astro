@@ -19,28 +19,30 @@ const ctaUrl = kitCtaUrl(kit, site);
 ---
 
 <BaseLayout title={kit.data.title} description={kit.data.shortDescription} site={site}>
-	<article class="bg-cream py-12 lg:py-20">
+	<article class="bg-cream py-14 lg:py-20">
 		<div class="section-container max-w-3xl">
-			<a href="/#kits" class="text-sm font-semibold text-sage hover:text-sage-dark">
+			<a
+				href="/#kits"
+				class="text-micro text-sage transition-colors duration-300 hover:text-sage-dark"
+			>
 				&larr; Todos los kits
 			</a>
 
-			<div class="mt-8 flex min-h-[280px] items-center justify-center overflow-hidden rounded-2xl bg-cream p-6 sm:min-h-[360px] sm:p-10">
+			<div class="mt-8 flex min-h-[280px] items-center justify-center rounded-3xl bg-cream p-6 sm:min-h-[340px] sm:p-10">
 				<img
 					src={kit.data.image}
 					alt={kit.data.title}
-					width="600"
-					height="500"
-					class="max-h-72 w-full max-w-md object-contain drop-shadow-md sm:max-h-80"
+					width="480"
+					height="480"
+					class="max-h-72 w-full max-w-sm object-contain sm:max-h-80"
+					style="filter: drop-shadow(0 12px 32px rgba(35, 33, 29, 0.14));"
 				/>
 			</div>
 
-			<h1 class="mt-8 font-heading text-3xl font-extrabold text-charcoal sm:text-4xl">
-				{kit.data.title}
-			</h1>
-			<p class="mt-3 text-lg text-sage">{kit.data.shortDescription}</p>
+			<h1 class="text-section-title mt-8">{kit.data.title}</h1>
+			<p class="text-subtitle mt-3 text-lg text-sage">{kit.data.shortDescription}</p>
 
-			<div class="prose prose-neutral mt-8 max-w-none text-charcoal/90">
+			<div class="prose-brand mt-8">
 				<Content />
 			</div>
 
@@ -53,7 +55,7 @@ const ctaUrl = kitCtaUrl(kit, site);
 				>
 					Consultar por WhatsApp
 				</a>
-				<a href="/#kits" class="btn-secondary text-center">Ver otros kits</a>
+				<a href="/#kits" class="btn-secondary-outline text-center">Ver otros kits</a>
 			</div>
 		</div>
 	</article>

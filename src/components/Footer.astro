@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ZenBadge from './ZenBadge.astro';
 
 interface Props {
 	site: CollectionEntry<'site'>;
@@ -11,21 +10,23 @@ const { brand, footer } = site.data;
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-cream-dark bg-cream">
-	<div class="section-container grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
+<footer class="mt-auto bg-sage-dark text-cream">
+	<div class="section-container grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 lg:py-20">
 		<div>
-			<ZenBadge size="sm" class="mb-4" />
-			<p class="font-heading text-lg font-extrabold text-charcoal">{brand.name}</p>
-			<p class="mt-3 max-w-xs text-sm leading-relaxed text-charcoal/75">{brand.description}</p>
+			<p class="text-card-title text-3xl text-cream">{brand.name}</p>
+			<p class="text-small mt-4 max-w-xs leading-[1.6] text-cream/75">{brand.description}</p>
 		</div>
 
 		<div>
-			<h3 class="font-heading text-xs font-extrabold tracking-widest text-sage uppercase">Menú</h3>
-			<ul class="mt-4 space-y-2.5">
+			<h3 class="text-micro text-cream/60">Menú</h3>
+			<ul class="mt-6 space-y-3">
 				{
 					footer.menu.map((item) => (
 						<li>
-							<a href={item.href} class="text-sm text-charcoal/80 transition-colors hover:text-sage">
+							<a
+								href={item.href}
+								class="text-small text-cream/80 transition-colors duration-300 hover:text-cream"
+							>
 								{item.label}
 							</a>
 						</li>
@@ -35,14 +36,14 @@ const year = new Date().getFullYear();
 		</div>
 
 		<div>
-			<h3 class="font-heading text-xs font-extrabold tracking-widest text-sage uppercase">Síguenos</h3>
-			<ul class="mt-4 flex gap-3">
+			<h3 class="text-micro text-cream/60">Síguenos</h3>
+			<ul class="mt-6 flex gap-3">
 				<li>
 					<a
 						href={footer.social.instagram}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex h-10 w-10 items-center justify-center rounded-full border border-sage/30 text-sage transition-colors hover:bg-sage hover:text-white"
+						class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-cream/40 hover:bg-cream/10"
 						aria-label="Instagram"
 					>
 						<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -57,7 +58,7 @@ const year = new Date().getFullYear();
 						href={footer.social.spotify}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex h-10 w-10 items-center justify-center rounded-full border border-sage/30 text-sage transition-colors hover:bg-sage hover:text-white"
+						class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-cream/40 hover:bg-cream/10"
 						aria-label="Spotify"
 					>
 						<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -72,7 +73,7 @@ const year = new Date().getFullYear();
 						href={footer.social.pinterest}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex h-10 w-10 items-center justify-center rounded-full border border-sage/30 text-sage transition-colors hover:bg-sage hover:text-white"
+						class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-cream/40 hover:bg-cream/10"
 						aria-label="Pinterest"
 					>
 						<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -85,7 +86,7 @@ const year = new Date().getFullYear();
 				<li>
 					<a
 						href={footer.social.email}
-						class="flex h-10 w-10 items-center justify-center rounded-full border border-sage/30 text-sage transition-colors hover:bg-sage hover:text-white"
+						class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 text-cream transition-all duration-300 hover:border-cream/40 hover:bg-cream/10"
 						aria-label="Email"
 					>
 						<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -94,18 +95,26 @@ const year = new Date().getFullYear();
 					</a>
 				</li>
 			</ul>
-			<p class="mt-4 text-sm font-medium text-charcoal/70">modozen.cr</p>
+			<p class="text-small mt-6 text-cream/60">modozen.cr</p>
 		</div>
 	</div>
 
-	<div class="border-t border-cream-dark">
-		<div class="section-container flex items-center justify-between gap-4 py-5">
-			<p class="text-xs text-charcoal/55">
+	<div class="border-t border-cream/10">
+		<div class="section-container flex flex-wrap items-center justify-between gap-4 py-6">
+			<p class="text-small text-cream/50">
 				&copy; {year} MODO ZEN. Todos los derechos reservados.
 			</p>
-			<svg class="h-5 w-5 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-4 6-8 8-8 12a8 8 0 1016 0c0-4-4-6-8-12z"></path>
-			</svg>
+			<ul class="flex gap-6">
+				{
+					footer.legal.map((item) => (
+						<li>
+							<a href={item.href} class="text-small text-cream/50 transition-colors duration-300 hover:text-cream/80">
+								{item.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</div>
 	</div>
 </footer>
