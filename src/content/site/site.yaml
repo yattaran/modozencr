@@ -1,0 +1,97 @@
+brand:
+  name: MODO ZEN
+  tagline: "Respire. Ya casi llega."
+  description: "Kits de supervivencia para la vida moderna. Hechos en Costa Rica con amor, calma y un perezoso de guía."
+
+whatsapp:
+  phone: "50688888888"
+  defaultMessage: "Hola, quiero info sobre MODO ZEN"
+
+navigation:
+  - label: KITS
+    href: "/#kits"
+  - label: MERCH
+    href: "#"
+    comingSoon: true
+  - label: RITUALES
+    href: "#"
+    comingSoon: true
+  - label: PLAYLISTS
+    href: "#"
+    comingSoon: true
+  - label: NOSOTROS
+    href: "/nosotros"
+
+topBar:
+  - label: Hecho en Costa Rica
+    icon: flag
+  - label: Envíos a todo el país
+    icon: truck
+  - label: Pagos seguros
+    icon: lock
+  - label: Materiales conscientes
+    icon: leaf
+
+benefits:
+  - label: ALIVIA EL ESTRÉS
+    icon: leaf
+  - label: ENFOQUE MENTAL
+    icon: brain
+  - label: RESET RÁPIDO
+    icon: refresh
+  - label: HECHO PARA COSTA RICA
+    icon: flag
+  - label: 100% MODO ZEN
+    icon: heart
+
+kitsSection:
+  title: ELIGE TU KIT DE SUPERVIVENCIA
+  subtitle: "Cada día tiene su propia batalla. Nosotros tenemos tu kit."
+
+story:
+  quote: "LA PRESA NO DEFINE SU VALOR COMO PERSONA."
+  subquote: "Respire. Enfoque. Continúe. ♡"
+  ctaLabel: CONOCE NUESTRA HISTORIA
+
+trustBar:
+  - label: HECHO EN COSTA RICA
+    icon: flag
+  - label: ENVÍOS A TODO EL PAÍS
+    icon: truck
+  - label: PAGOS SEGUROS
+    icon: lock
+  - label: "+1000 PERSONAS EN MODO ZEN"
+    icon: users
+
+about:
+  title: Nuestra historia
+  lead: "Nacimos en la presa, literalmente."
+  paragraphs:
+    - "MODO ZEN nació de una idea simple: la vida moderna en Costa Rica merece pausas reales. No prometemos magia — prometemos herramientas conscientes para sobrevivir el día a día con más calma."
+    - "Cada kit es curado a mano con productos locales y materiales que respetan el planeta. Desde el tráfico de la GAM hasta una tarde de café, hay un ritual para cada batalla."
+    - "Somos un equipo pequeño con un perezoso como guía espiritual. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
+
+footer:
+  menu:
+    - label: Kits
+      href: "/#kits"
+    - label: Merch
+      href: "#"
+    - label: Rituales
+      href: "#"
+    - label: Playlists
+      href: "#"
+    - label: Nosotros
+      href: "/nosotros"
+    - label: Contacto
+      href: "/nosotros#contacto"
+  social:
+    instagram: "https://instagram.com/modozen.cr"
+    spotify: "https://open.spotify.com"
+    pinterest: "https://pinterest.com/modozen"
+    email: "mailto:hola@modozen.cr"
+  legal:
+    - label: Términos
+      href: "#"
+    - label: Privacidad
+      href: "#"

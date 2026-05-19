@@ -1,0 +1,18 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<a href="/" class:list={['inline-flex items-center group', className]}>
+	<img
+		src="/images/logo.png"
+		alt="MODO ZEN"
+		width={200}
+		height={76}
+		class="h-9 w-auto object-contain object-left sm:h-10 lg:h-11"
+		loading="eager"
+	/>
+</a>

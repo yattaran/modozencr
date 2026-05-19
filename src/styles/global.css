@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+	--color-sage: #5a6748;
+	--color-sage-dark: #4a5540;
+	--color-cream: #f8f5ee;
+	--color-cream-dark: #efe9dd;
+	--color-cream-banner: #f3ede3;
+	--color-terracotta: #e29b84;
+	--color-terracotta-light: #f0b5a3;
+	--color-terracotta-dark: #d0856e;
+	--color-charcoal: #2d2d2d;
+	--font-heading: "Nunito", ui-sans-serif, system-ui, sans-serif;
+	--font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-cream font-body text-charcoal antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-heading);
+	}
+}
+
+@layer components {
+	.section-container {
+		@apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+	}
+
+	.btn-primary {
+		@apply inline-flex items-center justify-center rounded-xl bg-terracotta px-8 py-3.5 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:bg-terracotta-dark;
+	}
+
+	.btn-sage {
+		@apply inline-flex items-center justify-center rounded-xl bg-sage px-8 py-3.5 text-sm font-bold tracking-wider text-white uppercase transition-colors hover:bg-sage-dark;
+	}
+
+	.btn-kit {
+		@apply inline-flex w-full items-center justify-center rounded-xl bg-terracotta-light px-4 py-2.5 text-xs font-bold tracking-wider text-white uppercase transition-colors hover:bg-terracotta;
+	}
+
+	.btn-secondary {
+		@apply inline-flex items-center justify-center rounded-xl border-2 border-sage px-8 py-3.5 text-sm font-bold tracking-wider text-sage uppercase transition-colors hover:bg-sage hover:text-white;
+	}
+
+	.hide-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.hero-title {
+		letter-spacing: -0.02em;
+		text-shadow: 1px 1px 0 rgba(90, 103, 72, 0.08);
+	}
+}

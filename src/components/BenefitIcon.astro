@@ -1,0 +1,24 @@
+---
+interface Props {
+	icon: string;
+}
+
+const { icon } = Astro.props;
+
+const paths: Record<string, string> = {
+	leaf: 'M12 3c-4 6-8 8-8 12a8 8 0 1016 0c0-4-4-6-8-12z',
+	brain: 'M9.5 4A5.5 5.5 0 004 9.5c0 2 .8 3.8 2.1 5.1L6 20h12l-.1-5.4A5.5 5.5 0 0012 4.5 5.5 5.5 0 009.5 4z',
+	refresh: 'M4 12a8 8 0 0114.9-4M20 12a8 8 0 01-14.9 4M4 12h4M20 12h-4',
+	flag: 'M5 5v14M5 5h10l-2 4 2 4H5',
+	heart: 'M12 21s-7-4.5-7-10a4 4 0 017-2 4 4 0 017 2c0 5.5-7 10-7 10z',
+	truck: 'M3 7h11v8H3V7zm11 3h3l2 3v2h-5v-5zM6 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm10 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z',
+	lock: 'M7 11V8a5 5 0 0110 0v3M6 11h12v9H6v-9z',
+	users: 'M16 19v-1a4 4 0 00-8 0v1M12 12a3 3 0 100-6 3 3 0 000 6zm8 7v-1a3 3 0 00-2-2.83M4 18v-1a3 3 0 012-2.83',
+};
+
+const d = paths[icon] ?? paths.heart;
+---
+
+<svg class="h-8 w-8 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+	<path stroke-linecap="round" stroke-linejoin="round" d={d}></path>
+</svg>

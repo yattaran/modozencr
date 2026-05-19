@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import type { CollectionEntry } from 'astro:content';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	site: CollectionEntry<'site'>;
+}
+
+const { site, title, description } = Astro.props;
+const pageTitle = title ? `${title} | ${site.data.brand.name}` : site.data.brand.name;
+const pageDescription = description ?? site.data.brand.description;
+---
+
+<!doctype html>
+<html lang="es-CR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={pageDescription} />
+		<link rel="icon" type="image/png" href="/images/favicon.png" sizes="96x96" />
+		<link rel="apple-touch-icon" href="/images/badge-su-modo-zen.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Nunito:wght@600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>{pageTitle}</title>
+	</head>
+	<body class="min-h-screen flex flex-col">
+		<TopBar items={site.data.topBar} />
+		<Header site={site} />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer site={site} />
+	</body>
+</html>

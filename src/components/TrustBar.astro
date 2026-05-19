@@ -1,0 +1,26 @@
+---
+import BenefitIcon from './BenefitIcon.astro';
+
+interface Props {
+	items: { label: string; icon: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="border-y border-cream-dark/80 bg-cream py-10">
+	<div class="section-container">
+		<ul class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+			{
+				items.map((item) => (
+					<li class="flex flex-col items-center gap-3 text-center">
+						<BenefitIcon icon={item.icon} />
+						<span class="text-[10px] font-bold leading-tight tracking-wide text-charcoal sm:text-xs">
+							{item.label}
+						</span>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

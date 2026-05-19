@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import KitsSection from '../components/KitsSection.astro';
+import StoryBanner from '../components/StoryBanner.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { getSiteConfig, getKits } from '../lib/content';
+
+const site = await getSiteConfig();
+const kits = await getKits();
+---
+
+<BaseLayout site={site}>
+	<Hero site={site} />
+	<KitsSection kits={kits} site={site} />
+	<StoryBanner {...site.data.story} />
+	<TrustBar items={site.data.trustBar} />
+</BaseLayout>

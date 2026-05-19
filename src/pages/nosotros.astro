@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getSiteConfig } from '../lib/content';
+import { whatsappUrl } from '../lib/cta';
+
+const site = await getSiteConfig();
+const { about } = site.data;
+const contactUrl = whatsappUrl(site);
+---
+
+<BaseLayout title={about.title} site={site}>
+	<section class="bg-cream py-12 lg:py-20">
+		<div class="section-container max-w-3xl">
+			<h1 class="font-heading text-4xl font-extrabold text-charcoal">{about.title}</h1>
+			<p class="mt-4 text-xl font-medium text-sage">{about.lead}</p>
+
+			<div class="mt-10 space-y-6 leading-relaxed text-charcoal/85">
+				{
+					about.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))
+				}
+			</div>
+
+			<img
+				src="/images/story-sloth.png"
+				alt="Perezoso MODO ZEN"
+				width="640"
+				height="296"
+				class="mx-auto mt-12 w-full max-w-md object-contain"
+				loading="lazy"
+			/>
+
+			<div id="contacto" class="mt-12 text-center">
+				<a
+					href={contactUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn-primary"
+				>
+					Escríbenos por WhatsApp
+				</a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
