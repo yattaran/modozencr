@@ -1,10 +1,10 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { render } from 'astro:content';
-import { getSiteConfig, getKits, getKitBySlug } from '../../lib/content';
-import { kitCtaUrl } from '../../lib/cta';
-import { LOCALES, localePathArg, resolveLocale } from '../../lib/i18n';
+import { getSiteConfig, getKits, getKitBySlug } from '../../../lib/content';
+import { kitCtaUrl } from '../../../lib/cta';
+import { LOCALES, localePathArg, resolveLocale } from '../../../lib/i18n';
 
 export async function getStaticPaths() {
 	const slugs = new Set<string>();

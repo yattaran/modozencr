@@ -1,0 +1,144 @@
+brand:
+  name: MODO ZEN
+  tagline: "Breathe. You're almost there."
+  heroCopy: "Your emotional emergency kit. Urban calm, Costa Rican humor, and real wellness — made in Costa Rica."
+  description: "Survival kits for modern life. Made in Costa Rica — urban calm, local humor, and real wellness."
+
+whatsapp:
+  phone: "50688888888"
+  defaultMessage: "Hi, I'd like info about MODO ZEN"
+
+navigation:
+  - label: KITS
+    href: "/#kits"
+  - label: COMPANIES
+    href: "/empresas"
+  - label: MERCH
+    href: "/merch"
+  - label: PLAYLISTS
+    href: "/playlists"
+  - label: ABOUT
+    href: "/nosotros"
+
+topBar:
+  - label: Made in Costa Rica
+    icon: flag
+  - label: Nationwide shipping
+    icon: truck
+  - label: Secure payments
+    icon: lock
+  - label: Conscious materials
+    icon: leaf
+
+benefits:
+  - label: Eases stress
+    icon: leaf
+  - label: Mental focus
+    icon: brain
+  - label: Quick reset
+    icon: refresh
+  - label: Made for Costa Rica
+    icon: flag
+  - label: 100% Zen Mode
+    icon: heart
+
+kitsSection:
+  title: CHOOSE YOUR SURVIVAL KIT
+  subtitle: "Every day has its own battle. We've got your kit."
+
+story:
+  quote: "Traffic doesn't define your worth as a person."
+  subquote: "Breathe. Focus. Continue."
+  ctaLabel: Our story
+
+trustBar:
+  - label: Made in Costa Rica
+    icon: flag
+  - label: Shipping
+    icon: truck
+  - label: Secure payments
+    icon: lock
+  - label: Community
+    icon: users
+
+merch:
+  title: Merch
+  lead: "Pieces to take zen mode with you — tees, tote bags, and more."
+  paragraphs:
+    - "We're building the collection. In the meantime, message us if you're interested in a piece or want to know when it's available."
+  ctaLabel: "Message us on WhatsApp"
+  whatsappMessage: "Hi, I'm interested in MODO ZEN merch"
+
+playlists:
+  title: Playlists
+  lead: "Soundtracks for your reset. Rhythms for every kit and every pause."
+  spotifyUrl: "https://open.spotify.com/user/modozencr"
+  ctaLabel: "Listen on Spotify"
+
+about:
+  title: Our story
+  lead: "We were born in traffic — literally."
+  paragraphs:
+    - "MODO ZEN started with a simple idea: modern life in Costa Rica deserves real pauses. We don't promise magic — we promise mindful tools to get through the day with more calm."
+    - "Each kit is hand-curated with local products and planet-friendly materials. From GAM rush hour to a slow coffee afternoon, there's a ritual for every battle."
+    - "We're a small team with a sloth as our guide. If this resonates, say hi — we love meeting the MODO ZEN community."
+
+empresas:
+  title: "For companies"
+  lead: "Purposeful gifts for your team. Message us and we'll build kits for your occasion."
+  occasions:
+    - label: Onboarding
+      description: "A memorable welcome for new teammates."
+    - label: Mother's Day
+      description: "A thoughtful detail for moms on the team."
+    - label: Father's Day
+      description: "A calm reset for dads at the office."
+    - label: Holidays
+      description: "Year-end wellness with Costa Rican humor."
+  ctaLabel: "Get a quote on WhatsApp"
+  whatsappMessage: "Hi, I'm interested in corporate MODO ZEN kits for my company."
+  teaser:
+    quote: "Does your company need a reset?"
+    subquote: "Onboarding, special dates, and year-end — custom kits."
+    ctaLabel: "See company options"
+
+ui:
+  language: Language
+  openMenu: Open menu
+  viewKits: View kits
+  viewKit: View kit
+  heroSlothAlt: Sloth in zen meditation mode
+  teaserSlothAlt: MODO ZEN sloth in relax mode
+  allKits: All kits
+  otherKits: View other kits
+  whatsappKit: Ask on WhatsApp
+  whatsappContact: Message us on WhatsApp
+  footerMenu: Menu
+  footerFollow: Follow us
+  footerRights: All rights reserved.
+  empresasSlothAlt: MODO ZEN sloth at the office — corporate kits
+  aboutSlothAlt: MODO ZEN sloth
+
+footer:
+  menu:
+    - label: Kits
+      href: "/#kits"
+    - label: Companies
+      href: "/empresas"
+    - label: Merch
+      href: "/merch"
+    - label: Playlists
+      href: "/playlists"
+    - label: About
+      href: "/nosotros"
+    - label: Contact
+      href: "/nosotros#contacto"
+  social:
+    instagram: "https://instagram.com/modozen.cr"
+    spotify: "https://open.spotify.com/user/modozencr"
+    email: "mailto:info@modozencr.com"
+  legal:
+    - label: Terms
+      href: "#"
+    - label: Privacy
+      href: "#"

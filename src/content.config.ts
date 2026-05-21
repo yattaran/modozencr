@@ -17,7 +17,11 @@ const ctaSchema = z.discriminatedUnion('type', [
 ]);
 
 const kits = defineCollection({
-	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/kits' }),
+	loader: glob({
+		pattern: '**/*.{md,mdx}',
+		base: './src/content/kits',
+		generateId: ({ entry }) => entry.replace(/\.mdx?$/, ''),
+	}),
 	schema: z.object({
 		title: z.string(),
 		slug: z.string(),
@@ -30,7 +34,11 @@ const kits = defineCollection({
 });
 
 const site = defineCollection({
-	loader: glob({ pattern: '**/*.yaml', base: './src/content/site' }),
+	loader: glob({
+		pattern: '**/*.yaml',
+		base: './src/content/site',
+		generateId: ({ entry }) => entry.replace(/\.yaml$/, ''),
+	}),
 	schema: z.object({
 		brand: z.object({
 			name: z.string(),
@@ -61,20 +69,66 @@ const site = defineCollection({
 			ctaLabel: z.string(),
 		}),
 		trustBar: z.array(z.object({ label: z.string(), icon: z.string() })),
+		merch: z.object({
+			title: z.string(),
+			lead: z.string(),
+			paragraphs: z.array(z.string()),
+			ctaLabel: z.string(),
+			whatsappMessage: z.string(),
+		}),
+		playlists: z.object({
+			title: z.string(),
+			lead: z.string(),
+			spotifyUrl: z.string().url(),
+			ctaLabel: z.string(),
+		}),
 		about: z.object({
 			title: z.string(),
 			lead: z.string(),
 			paragraphs: z.array(z.string()),
+		}),
+		empresas: z.object({
+			title: z.string(),
+			lead: z.string(),
+			occasions: z.array(
+				z.object({
+					label: z.string(),
+					description: z.string(),
+				}),
+			),
+			ctaLabel: z.string(),
+			whatsappMessage: z.string(),
+			teaser: z.object({
+				quote: z.string(),
+				subquote: z.string(),
+				ctaLabel: z.string(),
+			}),
 		}),
 		footer: z.object({
 			menu: z.array(z.object({ label: z.string(), href: z.string() })),
 			social: z.object({
 				instagram: z.string().url(),
 				spotify: z.string().url(),
-				pinterest: z.string().url(),
 				email: z.string(),
 			}),
 			legal: z.array(z.object({ label: z.string(), href: z.string() })),
+		}),
+		ui: z.object({
+			language: z.string(),
+			openMenu: z.string(),
+			viewKits: z.string(),
+			viewKit: z.string(),
+			heroSlothAlt: z.string(),
+			teaserSlothAlt: z.string(),
+			allKits: z.string(),
+			otherKits: z.string(),
+			whatsappKit: z.string(),
+			whatsappContact: z.string(),
+			footerMenu: z.string(),
+			footerFollow: z.string(),
+			footerRights: z.string(),
+			empresasSlothAlt: z.string(),
+			aboutSlothAlt: z.string(),
 		}),
 	}),
 });

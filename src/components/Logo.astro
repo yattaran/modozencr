@@ -1,18 +1,23 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { localePathArg, resolveLocale } from '../lib/i18n';
+
 interface Props {
 	class?: string;
 }
 
 const { class: className = '' } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+const homeHref = getRelativeLocaleUrl(localePathArg(locale), '/');
 ---
 
-<a href="/" class:list={['inline-flex shrink-0 items-center', className]}>
+<a href={homeHref} class:list={['inline-flex shrink-0 items-center', className]}>
 	<img
 		src="/images/logo.png"
 		alt="MODO ZEN"
-		width={168}
-		height={64}
-		class="h-10 w-auto max-w-[140px] object-contain object-left sm:h-11 sm:max-w-[160px] lg:h-12 lg:max-w-[180px]"
+		width={336}
+		height={128}
+		class="h-[68px] w-auto max-w-[min(100%,320px)] object-contain object-left sm:h-[76px] sm:max-w-[380px] lg:h-[150px] lg:max-w-[min(100%,450px)]"
 		loading="eager"
 	/>
 </a>

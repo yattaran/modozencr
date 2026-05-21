@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { LOCALE_HTML_LANG, resolveLocale } from '../lib/i18n';
 
 interface Props {
 	title?: string;
@@ -12,12 +13,13 @@ interface Props {
 }
 
 const { site, title, description } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
 const pageTitle = title ? `${title} | ${site.data.brand.name}` : site.data.brand.name;
 const pageDescription = description ?? site.data.brand.description;
 ---
 
 <!doctype html>
-<html lang="es-CR">
+<html lang={LOCALE_HTML_LANG[locale]}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,6 +1,8 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { CollectionEntry } from 'astro:content';
 import { kitCtaUrl } from '../lib/cta';
+import { localePathArg, resolveLocale } from '../lib/i18n';
 
 interface Props {
 	kit: CollectionEntry<'kits'>;
@@ -8,8 +10,11 @@ interface Props {
 }
 
 const { kit, site } = Astro.props;
+const { ui } = site.data;
+const locale = resolveLocale(Astro.currentLocale);
+const localePath = localePathArg(locale);
 const ctaUrl = kitCtaUrl(kit, site);
-const detailUrl = `/kits/${kit.data.slug}`;
+const detailUrl = getRelativeLocaleUrl(localePath, `/kits/${kit.data.slug}`);
 ---
 
 <article class="product-card">
@@ -33,6 +38,6 @@ const detailUrl = `/kits/${kit.data.slug}`;
 		rel="noopener noreferrer"
 		class="btn-kit mt-6"
 	>
-		Ver kit
+		{ui.viewKit}
 	</a>
 </article>

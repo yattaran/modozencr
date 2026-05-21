@@ -11,15 +11,12 @@ whatsapp:
 navigation:
   - label: KITS
     href: "/#kits"
+  - label: EMPRESAS
+    href: "/empresas"
   - label: MERCH
-    href: "#"
-    comingSoon: true
-  - label: RITUALES
-    href: "#"
-    comingSoon: true
+    href: "/merch"
   - label: PLAYLISTS
-    href: "#"
-    comingSoon: true
+    href: "/playlists"
   - label: NOSOTROS
     href: "/nosotros"
 
@@ -64,6 +61,20 @@ trustBar:
   - label: Comunidad
     icon: users
 
+merch:
+  title: Merch
+  lead: "Piezas para llevar el modo zen contigo — camisetas, tote bags y más."
+  paragraphs:
+    - "Estamos armando la colección. Mientras tanto, escríbenos si te interesa alguna pieza o quieres enterarte cuando esté disponible."
+  ctaLabel: "Escríbenos por WhatsApp"
+  whatsappMessage: "Hola, me interesa el merch de MODO ZEN"
+
+playlists:
+  title: Playlists
+  lead: "Soundtracks para tu reset. Ritmos que acompañan cada kit y cada pausa."
+  spotifyUrl: "https://open.spotify.com/user/modozencr"
+  ctaLabel: "Escuchar en Spotify"
+
 about:
   title: Nuestra historia
   lead: "Nacimos en la presa, literalmente."
@@ -72,25 +83,60 @@ about:
     - "Cada kit es curado a mano con productos locales y materiales que respetan el planeta. Desde el tráfico de la GAM hasta una tarde de café, hay un ritual para cada batalla."
     - "Somos un equipo pequeño con un perezoso como guía. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
 
+empresas:
+  title: "Para empresas"
+  lead: "Regalos con propósito para tu equipo. Escríbenos y armamos kits a la medida de tu ocasión."
+  occasions:
+    - label: Onboarding
+      description: "Bienvenida memorable para nuevos colaboradores."
+    - label: Día de la madre
+      description: "Detalle para mamás del equipo."
+    - label: Día del padre
+      description: "Un reset de calma para papás en la oficina."
+    - label: Navidad
+      description: "Fin de año con bienestar y humor tico."
+  ctaLabel: "Cotizar por WhatsApp"
+  whatsappMessage: "Hola, me interesa kits corporativos de MODO ZEN para mi empresa."
+  teaser:
+    quote: "¿Tu empresa necesita un reset?"
+    subquote: "Onboarding, fechas especiales y fin de año — kits a la medida."
+    ctaLabel: "Ver opciones para empresas"
+
+ui:
+  language: Idioma
+  openMenu: Abrir menú
+  viewKits: Ver kits
+  viewKit: Ver kit
+  heroSlothAlt: Perezoso en modo zen meditando
+  teaserSlothAlt: Perezoso MODO ZEN en modo relax
+  allKits: Todos los kits
+  otherKits: Ver otros kits
+  whatsappKit: Consultar por WhatsApp
+  whatsappContact: Escríbenos por WhatsApp
+  footerMenu: Menú
+  footerFollow: Síguenos
+  footerRights: Todos los derechos reservados.
+  empresasSlothAlt: Perezoso MODO ZEN en oficina — kits corporativos
+  aboutSlothAlt: Perezoso MODO ZEN
+
 footer:
   menu:
     - label: Kits
       href: "/#kits"
+    - label: Empresas
+      href: "/empresas"
     - label: Merch
-      href: "#"
-    - label: Rituales
-      href: "#"
+      href: "/merch"
     - label: Playlists
-      href: "#"
+      href: "/playlists"
     - label: Nosotros
       href: "/nosotros"
     - label: Contacto
       href: "/nosotros#contacto"
   social:
     instagram: "https://instagram.com/modozen.cr"
-    spotify: "https://open.spotify.com"
-    pinterest: "https://pinterest.com/modozen"
-    email: "mailto:hola@modozen.cr"
+    spotify: "https://open.spotify.com/user/modozencr"
+    email: "mailto:info@modozencr.com"
   legal:
     - label: Términos
       href: "#"
