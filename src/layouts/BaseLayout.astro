@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { showTopBar } from '../lib/launch';
 import { LOCALE_HTML_LANG, resolveLocale } from '../lib/i18n';
 
 interface Props {
@@ -35,7 +36,7 @@ const pageDescription = description ?? site.data.brand.description;
 		<title>{pageTitle}</title>
 	</head>
 	<body class="min-h-screen flex flex-col">
-		<TopBar items={site.data.topBar} />
+		{showTopBar() && <TopBar items={site.data.topBar} />}
 		<Header site={site} />
 		<main class="flex-1">
 			<slot />

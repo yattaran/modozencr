@@ -2,10 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import KitsSection from '../../components/KitsSection.astro';
+import MerchTeaserSection from '../../components/MerchTeaserSection.astro';
+import WaitlistSection from '../../components/WaitlistSection.astro';
 import StoryBanner from '../../components/StoryBanner.astro';
-import TrustBar from '../../components/TrustBar.astro';
 import ZenchoAdvice from '../../components/ZenchoAdvice.astro';
 import { getSiteConfig } from '../../lib/content';
+import { showKitsSection, showStoryBanner } from '../../lib/launch';
 import { resolveLocale } from '../../lib/i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -14,8 +16,11 @@ const site = await getSiteConfig(locale);
 
 <BaseLayout site={site}>
 	<Hero site={site} />
-	<KitsSection site={site} />
+	<WaitlistSection site={site} />
+	<MerchTeaserSection site={site} />
+	{showKitsSection() && <KitsSection site={site} />}
 	<ZenchoAdvice {...site.data.zenchoAdvice} slothAlt={site.data.ui.zenchoSlothAlt} />
-	<StoryBanner {...site.data.story} teaserSlothAlt={site.data.ui.teaserSlothAlt} />
-	<TrustBar items={site.data.trustBar} />
+	{showStoryBanner() && (
+		<StoryBanner {...site.data.story} teaserSlothAlt={site.data.ui.teaserSlothAlt} />
+	)}
 </BaseLayout>

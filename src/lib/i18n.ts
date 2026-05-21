@@ -1,3 +1,5 @@
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 export const DEFAULT_LOCALE = 'es-CR';
 export const LOCALES = ['es-CR', 'en-US'] as const;
 export type Locale = (typeof LOCALES)[number];
@@ -38,4 +40,20 @@ export function isLocale(value: string | undefined): value is Locale {
 export function resolveLocale(value: string | undefined): Locale {
 	if (value === 'en' || value === 'en-US') return 'en-US';
 	return isLocale(value) ? value : DEFAULT_LOCALE;
+}
+
+/**
+ * Resolves nav/content hrefs for the active locale.
+ * `getRelativeLocaleUrl` appends a trailing slash before `#`, breaking anchors (`/#waitlist/`).
+ */
+export function resolveLocaleHref(locale: Locale, href: string): string {
+	const hashIndex = href.indexOf('#');
+	if (hashIndex === -1) {
+		return getRelativeLocaleUrl(localePathArg(locale), href);
+	}
+
+	const path = href.slice(0, hashIndex) || '/';
+	const hash = href.slice(hashIndex + 1).replace(/\/+$/, '');
+	const base = getRelativeLocaleUrl(localePathArg(locale), path).replace(/\/+$/, '') || '/';
+	return `${base}#${hash}`;
 }

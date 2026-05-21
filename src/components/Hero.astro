@@ -1,7 +1,6 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { CollectionEntry } from 'astro:content';
-import { localePathArg, resolveLocale } from '../lib/i18n';
+import { resolveLocale, resolveLocaleHref } from '../lib/i18n';
 import BenefitIcon from './BenefitIcon.astro';
 
 interface Props {
@@ -12,7 +11,6 @@ const { site } = Astro.props;
 const { brand, benefits, ui } = site.data;
 const { heroCopy } = brand;
 const locale = resolveLocale(Astro.currentLocale);
-const localePath = localePathArg(locale);
 ---
 
 <section class="overflow-hidden bg-paper">
@@ -22,7 +20,7 @@ const localePath = localePathArg(locale);
 				<h1 class="text-hero">{brand.name}</h1>
 				<p class="text-subtitle mt-4 text-xl text-sage lg:text-2xl">{brand.tagline}</p>
 				<p class="text-body-muted mx-auto mt-4 max-w-md lg:mx-0">{heroCopy}</p>
-				<a href={getRelativeLocaleUrl(localePath, '/#kits')} class="btn-primary mt-8">{ui.viewKits}</a>
+				<a href={resolveLocaleHref(locale, '/#waitlist')} class="btn-primary mt-8">{ui.joinWaitlist}</a>
 			</div>
 
 			<div class="hero-visual order-1 lg:order-2">

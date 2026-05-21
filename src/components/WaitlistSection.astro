@@ -1,0 +1,95 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	site: CollectionEntry<'site'>;
+}
+
+const { site } = Astro.props;
+const { waitlist } = site.data;
+const formEndpoint = import.meta.env.PUBLIC_WAITLIST_FORM_URL ?? '';
+---
+
+<section id="waitlist" class="bg-paper py-16 lg:py-24">
+	<div class="section-container max-w-xl">
+		<div class="rounded-3xl border border-sage/15 bg-card p-8 shadow-[var(--shadow-soft)] sm:p-10">
+			<div class="text-center">
+				<h2 class="text-section-title">{waitlist.title}</h2>
+				<p class="text-body-muted mt-4">{waitlist.subtitle}</p>
+			</div>
+
+			<form
+				id="waitlist-form"
+				class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start"
+				data-endpoint={formEndpoint}
+				data-success={waitlist.successMessage}
+				data-error={waitlist.errorMessage}
+				data-missing={waitlist.missingEndpointMessage}
+			>
+				<label class="sr-only" for="waitlist-email">{waitlist.emailLabel}</label>
+				<input
+					id="waitlist-email"
+					type="email"
+					name="email"
+					required
+					autocomplete="email"
+					placeholder={waitlist.emailPlaceholder}
+					class="min-h-[48px] flex-1 rounded-full border border-cream-dark bg-cream px-5 font-body text-base text-ink outline-none transition-colors duration-300 placeholder:text-muted focus:border-sage"
+				/>
+				<button type="submit" class="btn-primary shrink-0 sm:min-w-[10rem]">
+					{waitlist.submitLabel}
+				</button>
+			</form>
+
+			<p id="waitlist-status" class="mt-4 hidden text-center text-sm font-medium" role="status" aria-live="polite"></p>
+			<p class="text-small mt-4 text-center text-muted">{waitlist.privacyNote}</p>
+		</div>
+	</div>
+</section>
+
+<script>
+	const form = document.getElementById('waitlist-form') as HTMLFormElement | null;
+	const status = document.getElementById('waitlist-status');
+
+	form?.addEventListener('submit', async (event) => {
+		event.preventDefault();
+		if (!status) return;
+
+		const endpoint = form.dataset.endpoint?.trim();
+		const emailInput = form.querySelector<HTMLInputElement>('input[name="email"]');
+		const email = emailInput?.value.trim();
+
+		status.classList.remove('hidden', 'text-sage', 'text-peach-dark');
+		status.textContent = '';
+
+		if (!endpoint) {
+			status.textContent = form.dataset.missing ?? '';
+			status.classList.add('text-peach-dark');
+			return;
+		}
+
+		if (!email) return;
+
+		const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+		if (submitBtn) submitBtn.disabled = true;
+
+		try {
+			const response = await fetch(endpoint, {
+				method: 'POST',
+				headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email, _subject: 'MODO ZEN Waitlist' }),
+			});
+
+			if (!response.ok) throw new Error('submit failed');
+
+			status.textContent = form.dataset.success ?? '';
+			status.classList.add('text-sage');
+			form.reset();
+		} catch {
+			status.textContent = form.dataset.error ?? '';
+			status.classList.add('text-peach-dark');
+		} finally {
+			if (submitBtn) submitBtn.disabled = false;
+		}
+	});
+</script>

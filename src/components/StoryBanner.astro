@@ -1,5 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { isRouteHidden } from '../lib/launch';
 import { localePathArg, resolveLocale } from '../lib/i18n';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 const { quote, subquote, ctaLabel, teaserSlothAlt } = Astro.props;
 const locale = resolveLocale(Astro.currentLocale);
+const showAboutCta = !isRouteHidden('/nosotros');
 const aboutHref = getRelativeLocaleUrl(localePathArg(locale), '/nosotros');
 ---
 
@@ -45,9 +47,13 @@ const aboutHref = getRelativeLocaleUrl(localePathArg(locale), '/nosotros');
 					<p class="text-body-muted mt-2 text-sm sm:mt-3 sm:text-base">{subquote}</p>
 				</blockquote>
 
-				<a href={aboutHref} class="btn-primary shrink-0 !min-h-[44px] !px-6 !py-3 !text-sm">
-					{ctaLabel}
-				</a>
+				{
+					showAboutCta && (
+						<a href={aboutHref} class="btn-primary shrink-0 !min-h-[44px] !px-6 !py-3 !text-sm">
+							{ctaLabel}
+						</a>
+					)
+				}
 			</div>
 		</div>
 	</div>

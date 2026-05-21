@@ -1,7 +1,11 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { launchRedirect } from '../../lib/launch';
 import { localePathArg, resolveLocale } from '../../lib/i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
-return Astro.redirect(getRelativeLocaleUrl(localePathArg(locale), '/'));
+return (
+	launchRedirect(Astro, locale) ??
+	Astro.redirect(getRelativeLocaleUrl(localePathArg(locale), '/'))
+);
 ---

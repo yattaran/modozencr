@@ -1,18 +1,16 @@
 brand:
   name: MODO ZEN
   tagline: "Breathe. You're almost there."
-  heroCopy: "Your emotional emergency kit. Urban calm, Costa Rican humor, and real wellness — made in Costa Rica."
-  description: "Survival kits for modern life. Made in Costa Rica — urban calm, local humor, and real wellness."
+  heroCopy: "Urban calm, Costa Rican humor, and real wellness — made in Costa Rica."
+  description: "Survival for modern life. Made in Costa Rica — urban calm, Costa Rican humor, and real wellness."
 
 whatsapp:
   phone: "50688888888"
   defaultMessage: "Hi, I'd like info about MODO ZEN"
 
 navigation:
-  - label: KITS
-    href: "/#kits"
   - label: MERCH
-    href: "/merch"
+    href: "/#waitlist"
   - label: PLAYLISTS
     href: "/playlists"
   - label: ABOUT
@@ -46,6 +44,22 @@ kitsSection:
   comingSoon: true
   comingSoonLabel: Coming soon
 
+merchTeaser:
+  title: MERCH
+  subtitle: "Pieces to take zen mode with you — made with Costa Rican humor and realistic wellness."
+  comingSoonLabel: Coming soon
+
+waitlist:
+  title: Waitlist
+  subtitle: "Be first to know when Zencho's first drop goes live."
+  emailLabel: Email address
+  emailPlaceholder: you@email.com
+  submitLabel: Join the list
+  successMessage: "You're in! Zencho will let you know when the drop lands."
+  errorMessage: "Something went wrong. Please try again in a moment."
+  missingEndpointMessage: "The waitlist is coming online soon. For now, say hi on Instagram."
+  privacyNote: "No spam. Just drop updates and good vibes."
+
 story:
   quote: "Traffic doesn't define your worth as a person."
   subquote: "Breathe. Focus. Continue."
@@ -69,7 +83,7 @@ trustBar:
 
 merch:
   title: Merch
-  lead: "Pieces to take zen mode with you — Costa Rican humor and realistic wellness."
+  lead: "Pieces to take zen mode with you — made with Costa Rican humor and realistic wellness."
   hero:
     image: "/images/merch/hero.png"
     alt: "Zencho merch — to survive life one day at a time"
@@ -123,6 +137,7 @@ ui:
   language: Language
   openMenu: Open menu
   viewKits: View kits
+  joinWaitlist: Join the list
   viewKit: View kit
   heroSlothAlt: Zencho the sloth in zen meditation mode
   teaserSlothAlt: Zencho the MODO ZEN sloth in relax mode
@@ -139,10 +154,10 @@ ui:
 
 footer:
   menu:
-    - label: Kits
-      href: "/#kits"
     - label: Merch
-      href: "/merch"
+      href: "/#merch"
+    - label: Waitlist
+      href: "/#waitlist"
     - label: Playlists
       href: "/playlists"
     - label: About

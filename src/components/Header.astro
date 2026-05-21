@@ -1,7 +1,7 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { CollectionEntry } from 'astro:content';
-import { localePathArg, resolveLocale } from '../lib/i18n';
+import { filterVisibleNav } from '../lib/launch';
+import { resolveLocale, resolveLocaleHref } from '../lib/i18n';
 import Logo from './Logo.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
@@ -10,9 +10,9 @@ interface Props {
 }
 
 const { site } = Astro.props;
-const { navigation, ui } = site.data;
+const { ui } = site.data;
+const navigation = filterVisibleNav(site.data.navigation);
 const locale = resolveLocale(Astro.currentLocale);
-const localePath = localePathArg(locale);
 ---
 
 <header class="sticky top-0 z-50 border-b border-cream-dark/60 bg-[rgba(246,241,232,0.85)] backdrop-blur-[12px]">
@@ -37,7 +37,7 @@ const localePath = localePathArg(locale);
 			{
 				navigation.map((item) => (
 					<a
-						href={getRelativeLocaleUrl(localePath, item.href)}
+						href={resolveLocaleHref(locale, item.href)}
 						class:list={[
 							'text-micro text-ink transition-colors duration-300 hover:text-sage',
 							item.comingSoon && 'cursor-default opacity-40',
@@ -63,7 +63,7 @@ const localePath = localePathArg(locale);
 			{
 				navigation.map((item) => (
 					<a
-						href={getRelativeLocaleUrl(localePath, item.href)}
+						href={resolveLocaleHref(locale, item.href)}
 						class="text-micro rounded-2xl px-4 py-3 text-ink transition-colors duration-300 hover:bg-cream-dark"
 					>
 						{item.label}

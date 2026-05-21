@@ -5,8 +5,11 @@ import MerchProductCard from '../../components/MerchProductCard.astro';
 import { getSiteConfig } from '../../lib/content';
 import { whatsappUrl } from '../../lib/cta';
 import { resolveLocale } from '../../lib/i18n';
+import { launchRedirect } from '../../lib/launch';
 
 const locale = resolveLocale(Astro.currentLocale);
+const hidden = launchRedirect(Astro, locale);
+if (hidden) return hidden;
 const site = await getSiteConfig(locale);
 const { merch } = site.data;
 const contactUrl = whatsappUrl(site, merch.whatsappMessage);

@@ -1,18 +1,16 @@
 brand:
   name: MODO ZEN
   tagline: "Respire. Ya casi llega."
-  heroCopy: "Tu kit emocional de emergencia. Calma urbana, humor tico y bienestar real — hecho en Costa Rica."
-  description: "Kits de supervivencia para la vida moderna. Hechos en Costa Rica — calma urbana, humor tico y bienestar real."
+  heroCopy: "Calma urbana, humor tico y bienestar real — hecho en Costa Rica."
+  description: "Supervivencia para la vida moderna. Hechos en Costa Rica — calma urbana, humor tico y bienestar real."
 
 whatsapp:
   phone: "50688888888"
   defaultMessage: "Hola, quiero info sobre MODO ZEN"
 
 navigation:
-  - label: KITS
-    href: "/#kits"
   - label: MERCH
-    href: "/merch"
+    href: "/#waitlist"
   - label: PLAYLISTS
     href: "/playlists"
   - label: NOSOTROS
@@ -45,6 +43,22 @@ kitsSection:
   subtitle: "Pronto vas a poder elegir tu kit de supervivencia."
   comingSoon: true
   comingSoonLabel: Próximamente
+
+merchTeaser:
+  title: MERCH
+  subtitle: "Piezas para llevar el modo zen contigo — hechas con humor tico y bienestar realista."
+  comingSoonLabel: Próximamente
+
+waitlist:
+  title: Lista de espera
+  subtitle: "Sé de los primeros en enterarte cuando abramos el primer drop de Zencho."
+  emailLabel: Correo electrónico
+  emailPlaceholder: tu@correo.com
+  submitLabel: Unirme
+  successMessage: "¡Listo! Ya estás en la lista. Zencho te avisa cuando llegue el drop."
+  errorMessage: "Algo salió mal. Intentá de nuevo en un momento."
+  missingEndpointMessage: "La lista de espera se activa pronto. Mientras tanto, escríbenos por Instagram."
+  privacyNote: "Sin spam. Solo avisos del drop y buenas vibras."
 
 story:
   quote: "La presa no define su valor como persona."
@@ -123,6 +137,7 @@ ui:
   language: Idioma
   openMenu: Abrir menú
   viewKits: Ver kits
+  joinWaitlist: Unirme a la lista
   viewKit: Ver kit
   heroSlothAlt: Zencho, perezoso en modo zen meditando
   teaserSlothAlt: Zencho, perezoso MODO ZEN en modo relax
@@ -139,10 +154,10 @@ ui:
 
 footer:
   menu:
-    - label: Kits
-      href: "/#kits"
     - label: Merch
-      href: "/merch"
+      href: "/#merch"
+    - label: Lista de espera
+      href: "/#waitlist"
     - label: Playlists
       href: "/playlists"
     - label: Nosotros
