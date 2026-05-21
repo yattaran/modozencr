@@ -13,6 +13,10 @@ const TIPS_ES: ZenchoTip[] = [
 	'La guácima del vecino crece sola. Usted no tiene que regarla ni comentarla.',
 	'Cuando todo salga mal, recuerde: al menos no le cayó un mango en la cabeza. Eso ya es ganancia.',
 	'El mejor plan tico sigue siendo "mañana se ve". Hoy haga lo que alcance y suelte el resto.',
+	'Zencho viendo que el Waze dice 12 mins y en realidad son 48.',
+	'Respire. El mae del Hilux no define su paz interior.',
+	'No todo amerita un bocinazo.',
+	'Usted no está atrapado en la presa. La presa está atrapada con usted.',
 ];
 
 const TIPS_EN: ZenchoTip[] = [
@@ -26,6 +30,10 @@ const TIPS_EN: ZenchoTip[] = [
 	'Your neighbor\'s drama grows on its own. You don\'t have to water it or comment.',
 	'When everything goes wrong, remember: at least no mango fell on your head. That\'s a win.',
 	'The best tico plan is still "we\'ll see tomorrow." Today, do what you can and drop the rest.',
+	'Zencho watching Waze say 12 minutes when it\'s really 48.',
+	'Breathe. The dude in the Hilux doesn\'t define your inner peace.',
+	'Not everything deserves a honk.',
+	'You\'re not stuck in traffic. Traffic is stuck with you.',
 ];
 
 const TIPS_BY_LOCALE: Record<Locale, ZenchoTip[]> = {
