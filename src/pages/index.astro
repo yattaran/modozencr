@@ -5,17 +5,16 @@ import KitsSection from '../components/KitsSection.astro';
 import StoryBanner from '../components/StoryBanner.astro';
 import TrustBar from '../components/TrustBar.astro';
 import ZenchoAdvice from '../components/ZenchoAdvice.astro';
-import { getSiteConfig, getKits } from '../lib/content';
+import { getSiteConfig } from '../lib/content';
 import { resolveLocale } from '../lib/i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
 const site = await getSiteConfig(locale);
-const kits = await getKits(locale);
 ---
 
 <BaseLayout site={site}>
 	<Hero site={site} />
-	<KitsSection kits={kits} site={site} />
+	<KitsSection site={site} />
 	<ZenchoAdvice {...site.data.zenchoAdvice} slothAlt={site.data.ui.zenchoSlothAlt} />
 	<StoryBanner {...site.data.story} teaserSlothAlt={site.data.ui.teaserSlothAlt} />
 	<TrustBar items={site.data.trustBar} />

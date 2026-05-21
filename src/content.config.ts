@@ -62,6 +62,8 @@ const site = defineCollection({
 		kitsSection: z.object({
 			title: z.string(),
 			subtitle: z.string(),
+			comingSoon: z.boolean().optional(),
+			comingSoonLabel: z.string().optional(),
 		}),
 		story: z.object({
 			quote: z.string(),
@@ -78,7 +80,18 @@ const site = defineCollection({
 		merch: z.object({
 			title: z.string(),
 			lead: z.string(),
-			paragraphs: z.array(z.string()),
+			hero: z.object({
+				image: z.string(),
+				alt: z.string(),
+			}),
+			products: z.array(
+				z.object({
+					slug: z.string(),
+					name: z.string(),
+					tagline: z.string(),
+					image: z.string(),
+				}),
+			),
 			ctaLabel: z.string(),
 			whatsappMessage: z.string(),
 		}),
@@ -92,23 +105,6 @@ const site = defineCollection({
 			title: z.string(),
 			lead: z.string(),
 			paragraphs: z.array(z.string()),
-		}),
-		empresas: z.object({
-			title: z.string(),
-			lead: z.string(),
-			occasions: z.array(
-				z.object({
-					label: z.string(),
-					description: z.string(),
-				}),
-			),
-			ctaLabel: z.string(),
-			whatsappMessage: z.string(),
-			teaser: z.object({
-				quote: z.string(),
-				subquote: z.string(),
-				ctaLabel: z.string(),
-			}),
 		}),
 		footer: z.object({
 			menu: z.array(z.object({ label: z.string(), href: z.string() })),
@@ -134,8 +130,8 @@ const site = defineCollection({
 			footerMenu: z.string(),
 			footerFollow: z.string(),
 			footerRights: z.string(),
-			empresasSlothAlt: z.string(),
 			aboutSlothAlt: z.string(),
+			merchProductAlt: z.string(),
 		}),
 	}),
 });

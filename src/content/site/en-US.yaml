@@ -11,8 +11,6 @@ whatsapp:
 navigation:
   - label: KITS
     href: "/#kits"
-  - label: COMPANIES
-    href: "/empresas"
   - label: MERCH
     href: "/merch"
   - label: PLAYLISTS
@@ -43,8 +41,10 @@ benefits:
     icon: heart
 
 kitsSection:
-  title: CHOOSE YOUR SURVIVAL KIT
-  subtitle: "Every day has its own battle. We've got your kit."
+  title: KITS
+  subtitle: "Soon you'll be able to choose your survival kit."
+  comingSoon: true
+  comingSoonLabel: Coming soon
 
 story:
   quote: "Traffic doesn't define your worth as a person."
@@ -69,10 +69,40 @@ trustBar:
 
 merch:
   title: Merch
-  lead: "Pieces to take zen mode with you — tees, tote bags, and more."
-  paragraphs:
-    - "We're building the collection. In the meantime, message us if you're interested in a piece or want to know when it's available."
-  ctaLabel: "Message us on WhatsApp"
+  lead: "Pieces to take zen mode with you — Costa Rican humor and realistic wellness."
+  hero:
+    image: "/images/merch/hero.png"
+    alt: "Zencho merch — to survive life one day at a time"
+  products:
+    - slug: taza
+      name: Mug
+      tagline: "A reminder that setting boundaries is self-care too."
+      image: "/images/merch/taza.png"
+    - slug: libreta
+      name: Notebook
+      tagline: "To get ideas out and free your mind."
+      image: "/images/merch/libreta.png"
+    - slug: ambientador
+      name: Air freshener
+      tagline: "Calm scent in the middle of chaos."
+      image: "/images/merch/ambientador.png"
+    - slug: camiseta
+      name: T-shirt
+      tagline: "It's not fashion — it's a state of mind."
+      image: "/images/merch/camiseta.png"
+    - slug: stickers
+      name: Sticker pack
+      tagline: "For your laptop, thermos, notebook — wherever you need a reminder."
+      image: "/images/merch/stickers.png"
+    - slug: tote-bag
+      name: Tote bag
+      tagline: "To carry your things and your dramas."
+      image: "/images/merch/tote-bag.png"
+    - slug: mousepad
+      name: Mousepad
+      tagline: "A soft surface for a less chaotic day."
+      image: "/images/merch/mousepad.png"
+  ctaLabel: "Ask on WhatsApp"
   whatsappMessage: "Hi, I'm interested in MODO ZEN merch"
 
 playlists:
@@ -89,25 +119,6 @@ about:
     - "Each kit is hand-curated with local products and planet-friendly materials. From GAM rush hour to a slow coffee afternoon, there's a ritual for every battle."
     - "We're a small team with Zencho as our guide. If this resonates, say hi — we love meeting the MODO ZEN community."
 
-empresas:
-  title: "For companies"
-  lead: "Purposeful gifts for your team. Message us and we'll build kits for your occasion."
-  occasions:
-    - label: Onboarding
-      description: "A memorable welcome for new teammates."
-    - label: Mother's Day
-      description: "A thoughtful detail for moms on the team."
-    - label: Father's Day
-      description: "A calm reset for dads at the office."
-    - label: Holidays
-      description: "Year-end wellness with Costa Rican humor."
-  ctaLabel: "Get a quote on WhatsApp"
-  whatsappMessage: "Hi, I'm interested in corporate MODO ZEN kits for my company."
-  teaser:
-    quote: "Does your company need a reset?"
-    subquote: "Onboarding, special dates, and year-end — custom kits."
-    ctaLabel: "See company options"
-
 ui:
   language: Language
   openMenu: Open menu
@@ -123,15 +134,13 @@ ui:
   footerMenu: Menu
   footerFollow: Follow us
   footerRights: All rights reserved.
-  empresasSlothAlt: MODO ZEN sloth at the office — corporate kits
   aboutSlothAlt: MODO ZEN sloth
+  merchProductAlt: "MODO ZEN product: {name}"
 
 footer:
   menu:
     - label: Kits
       href: "/#kits"
-    - label: Companies
-      href: "/empresas"
     - label: Merch
       href: "/merch"
     - label: Playlists

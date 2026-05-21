@@ -1,53 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getSiteConfig } from '../../lib/content';
-import { whatsappUrl } from '../../lib/cta';
-import { resolveLocale } from '../../lib/i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { localePathArg, resolveLocale } from '../../lib/i18n';
 
 const locale = resolveLocale(Astro.currentLocale);
-const site = await getSiteConfig(locale);
-const { empresas, ui } = site.data;
-const contactUrl = whatsappUrl(site, empresas.whatsappMessage);
+return Astro.redirect(getRelativeLocaleUrl(localePathArg(locale), '/'));
 ---
-
-<BaseLayout title={empresas.title} site={site}>
-	<section class="bg-cream py-16 lg:py-24">
-		<div class="section-container max-w-3xl">
-			<h1 class="text-section-title">{empresas.title}</h1>
-			<p class="text-subtitle mt-5 text-xl text-sage">{empresas.lead}</p>
-
-			<img
-				src="/images/empresas-sloth.png"
-				alt={ui.empresasSlothAlt}
-				width="1024"
-				height="1024"
-				class="mx-auto mt-12 w-full max-w-2xl rounded-3xl object-cover shadow-[var(--shadow-soft)]"
-				loading="lazy"
-			/>
-
-			<ul class="mt-12 grid gap-4 sm:grid-cols-2">
-				{
-					empresas.occasions.map((occasion) => (
-						<li class="story-panel p-6">
-							<h2 class="font-subtitle text-lg font-medium uppercase tracking-wide text-sage">
-								{occasion.label}
-							</h2>
-							<p class="text-body-muted mt-2">{occasion.description}</p>
-						</li>
-					))
-				}
-			</ul>
-
-			<div id="contacto" class="mt-16 text-center">
-				<a
-					href={contactUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="btn-primary"
-				>
-					{empresas.ctaLabel}
-				</a>
-			</div>
-		</div>
-	</section>
-</BaseLayout>

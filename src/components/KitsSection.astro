@@ -1,13 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import KitCard from './KitCard.astro';
 
 interface Props {
-	kits: CollectionEntry<'kits'>[];
 	site: CollectionEntry<'site'>;
 }
 
-const { kits, site } = Astro.props;
+const { site } = Astro.props;
 const { kitsSection } = site.data;
 ---
 
@@ -15,13 +13,14 @@ const { kitsSection } = site.data;
 	<div class="section-container">
 		<div class="text-center">
 			<h2 class="text-section-title">{kitsSection.title}</h2>
-			<p class="text-body-muted mt-4 max-w-xl mx-auto">{kitsSection.subtitle}</p>
+			{
+				kitsSection.comingSoon ? (
+					<p class="text-subtitle mt-6 text-2xl text-sage">{kitsSection.comingSoonLabel}</p>
+				) : (
+					<p class="text-body-muted mt-4 max-w-xl mx-auto">{kitsSection.subtitle}</p>
+				)
+			}
 		</div>
 
-		<div class="products-grid">
-			{kits.map((kit) => (
-				<KitCard kit={kit} site={site} />
-			))}
-		</div>
 	</div>
 </section>

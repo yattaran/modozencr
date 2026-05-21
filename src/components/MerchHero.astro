@@ -1,0 +1,22 @@
+---
+interface Props {
+	image: string;
+	alt: string;
+}
+
+const { image, alt } = Astro.props;
+---
+
+<section class="overflow-hidden bg-cream">
+	<div class="section-container py-10 lg:py-14">
+		<img
+			src={image}
+			alt={alt}
+			width="676"
+			height="948"
+			class="mx-auto w-full max-w-xl object-contain"
+			loading="eager"
+			fetchpriority="high"
+		/>
+	</div>
+</section>
