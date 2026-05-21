@@ -51,6 +51,12 @@ story:
   subquote: "Breathe. Focus. Continue."
   ctaLabel: Our story
 
+zenchoAdvice:
+  title: Zencho's tip of the day
+  subtitle: Neighborhood wisdom, no lecture
+  badge: Pura vida (with calm)
+  attribution: '— <strong>Zencho</strong>, official MODO ZEN zen guide'
+
 trustBar:
   - label: Made in Costa Rica
     icon: flag
@@ -81,7 +87,7 @@ about:
   paragraphs:
     - "MODO ZEN started with a simple idea: modern life in Costa Rica deserves real pauses. We don't promise magic — we promise mindful tools to get through the day with more calm."
     - "Each kit is hand-curated with local products and planet-friendly materials. From GAM rush hour to a slow coffee afternoon, there's a ritual for every battle."
-    - "We're a small team with a sloth as our guide. If this resonates, say hi — we love meeting the MODO ZEN community."
+    - "We're a small team with Zencho as our guide. If this resonates, say hi — we love meeting the MODO ZEN community."
 
 empresas:
   title: "For companies"
@@ -107,8 +113,9 @@ ui:
   openMenu: Open menu
   viewKits: View kits
   viewKit: View kit
-  heroSlothAlt: Sloth in zen meditation mode
-  teaserSlothAlt: MODO ZEN sloth in relax mode
+  heroSlothAlt: Zencho the sloth in zen meditation mode
+  teaserSlothAlt: Zencho the MODO ZEN sloth in relax mode
+  zenchoSlothAlt: Zencho at his desk, zen guide
   allKits: All kits
   otherKits: View other kits
   whatsappKit: Ask on WhatsApp

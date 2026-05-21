@@ -1,0 +1,89 @@
+---
+import { getZenchoTipOfDay, getZenchoTips } from '../lib/zencho-tips';
+import { resolveLocale } from '../lib/i18n';
+
+interface Props {
+	title: string;
+	subtitle: string;
+	badge: string;
+	attribution: string;
+	slothAlt: string;
+}
+
+const { title, subtitle, badge, attribution, slothAlt } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+const tips = getZenchoTips(locale);
+const tipOfDay = getZenchoTipOfDay(locale);
+---
+
+<section class="bg-cream py-10 lg:py-14" aria-labelledby="zencho-advice-heading">
+	<div class="section-container">
+		<div
+			class="grid items-center gap-6 rounded-3xl border border-sage/15 bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,42%)] lg:gap-10 lg:p-10"
+		>
+			<div class="order-2 flex flex-col gap-3 lg:order-1">
+				<div class="flex flex-wrap items-center gap-3">
+					<p class="text-micro text-sage">{badge}</p>
+					<span class="hidden h-4 w-px bg-sage/25 sm:inline" aria-hidden="true"></span>
+					<p class="text-small text-muted">{subtitle}</p>
+				</div>
+
+				<h2 id="zencho-advice-heading" class="text-section-title text-ink">
+					{title}
+				</h2>
+
+				<blockquote class="relative pl-4 sm:pl-5">
+					<span
+						class="font-display absolute top-0 left-0 text-4xl leading-none text-peach/80 select-none"
+						aria-hidden="true"
+					>
+						"
+					</span>
+					<p
+						id="zencho-advice-text"
+						class="font-display text-[20px] leading-[1.15] text-ink sm:text-[24px] lg:text-[26px]"
+					>
+						{tipOfDay}
+					</p>
+				</blockquote>
+
+				<p class="text-small text-muted" set:html={attribution} />
+			</div>
+
+			<div
+				class="order-1 flex min-h-[180px] items-end justify-center px-2 py-2 sm:min-h-[200px] lg:order-2 lg:items-center"
+			>
+				<img
+					src="/images/tips-sloth.png"
+					alt={slothAlt}
+					width={1536}
+					height={1024}
+					class="h-auto max-h-[200px] w-full object-contain object-bottom sm:max-h-[240px] lg:max-h-[280px]"
+					loading="lazy"
+					decoding="async"
+				/>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script define:vars={{ tips }}>
+	const el = document.getElementById('zencho-advice-text');
+	if (!el || !tips?.length) {
+		/* no-op */
+	} else {
+		const parts = new Intl.DateTimeFormat('en-US', {
+			timeZone: 'America/Costa_Rica',
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric',
+		}).formatToParts(new Date());
+		const year = Number(parts.find((p) => p.type === 'year')?.value);
+		const month = Number(parts.find((p) => p.type === 'month')?.value);
+		const day = Number(parts.find((p) => p.type === 'day')?.value);
+		const utc = Date.UTC(year, month - 1, day);
+		const start = Date.UTC(year, 0, 0);
+		const dayOfYear = Math.floor((utc - start) / 86_400_000);
+		el.textContent = tips[dayOfYear % tips.length];
+	}
+</script>

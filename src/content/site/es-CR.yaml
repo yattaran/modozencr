@@ -51,6 +51,12 @@ story:
   subquote: "Respire. Enfoque. Continúe."
   ctaLabel: Conoce nuestra historia
 
+zenchoAdvice:
+  title: Consejo del día de Zencho
+  subtitle: Sabiduría de barrio, sin sermón
+  badge: Pura vida (con calma)
+  attribution: '— <strong>Zencho</strong>, guía zen oficial de MODO ZEN'
+
 trustBar:
   - label: Hecho en Costa Rica
     icon: flag
@@ -81,7 +87,7 @@ about:
   paragraphs:
     - "MODO ZEN nació de una idea simple: la vida moderna en Costa Rica merece pausas reales. No prometemos magia — prometemos herramientas conscientes para sobrevivir el día a día con más calma."
     - "Cada kit es curado a mano con productos locales y materiales que respetan el planeta. Desde el tráfico de la GAM hasta una tarde de café, hay un ritual para cada batalla."
-    - "Somos un equipo pequeño con un perezoso como guía. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
+    - "Somos un equipo pequeño con Zencho como guía. Si esto resuena contigo, escríbenos — nos encanta conocer a la comunidad MODO ZEN."
 
 empresas:
   title: "Para empresas"
@@ -107,8 +113,9 @@ ui:
   openMenu: Abrir menú
   viewKits: Ver kits
   viewKit: Ver kit
-  heroSlothAlt: Perezoso en modo zen meditando
-  teaserSlothAlt: Perezoso MODO ZEN en modo relax
+  heroSlothAlt: Zencho, perezoso en modo zen meditando
+  teaserSlothAlt: Zencho, perezoso MODO ZEN en modo relax
+  zenchoSlothAlt: Zencho en su escritorio, guía en modo zen
   allKits: Todos los kits
   otherKits: Ver otros kits
   whatsappKit: Consultar por WhatsApp

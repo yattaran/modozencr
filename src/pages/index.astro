@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import KitsSection from '../components/KitsSection.astro';
 import StoryBanner from '../components/StoryBanner.astro';
 import TrustBar from '../components/TrustBar.astro';
+import ZenchoAdvice from '../components/ZenchoAdvice.astro';
 import { getSiteConfig, getKits } from '../lib/content';
 import { resolveLocale } from '../lib/i18n';
 
@@ -15,6 +16,7 @@ const kits = await getKits(locale);
 <BaseLayout site={site}>
 	<Hero site={site} />
 	<KitsSection kits={kits} site={site} />
+	<ZenchoAdvice {...site.data.zenchoAdvice} slothAlt={site.data.ui.zenchoSlothAlt} />
 	<StoryBanner {...site.data.story} teaserSlothAlt={site.data.ui.teaserSlothAlt} />
 	<TrustBar items={site.data.trustBar} />
 </BaseLayout>

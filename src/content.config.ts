@@ -68,6 +68,12 @@ const site = defineCollection({
 			subquote: z.string(),
 			ctaLabel: z.string(),
 		}),
+		zenchoAdvice: z.object({
+			title: z.string(),
+			subtitle: z.string(),
+			badge: z.string(),
+			attribution: z.string(),
+		}),
 		trustBar: z.array(z.object({ label: z.string(), icon: z.string() })),
 		merch: z.object({
 			title: z.string(),
@@ -120,6 +126,7 @@ const site = defineCollection({
 			viewKit: z.string(),
 			heroSlothAlt: z.string(),
 			teaserSlothAlt: z.string(),
+			zenchoSlothAlt: z.string(),
 			allKits: z.string(),
 			otherKits: z.string(),
 			whatsappKit: z.string(),
